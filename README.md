@@ -5,6 +5,9 @@
 * Python3.6
 * Opencv2
 * Analysis of CAN data relys on Kvaser CANlib, so pip install CANlib
+
+## Driver and SDK installation
+* [Kvaser Driver and SDK](https://www.kvaser.com/download/)
 ## Hardware
 * [Mobileye M630](https://www.mobileye.com/uk/fleets/products/mobileye-6-collision-avoidance-system/)
 * [CANAnalysis General purpose version](https://item.taobao.com/item.htm?spm=2013.1.0.0.3TumXg&id=546938109612)
