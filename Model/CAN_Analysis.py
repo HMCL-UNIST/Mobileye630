@@ -1,4 +1,7 @@
-from canlib import Frame
+import platform
+
+if platform.system() != 'Darwin':
+    from canlib import Frame
 
 '''解析CAN报文，返回的是字典'''
 class CAN_Msg_Analysis:

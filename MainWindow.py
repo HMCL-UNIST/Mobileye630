@@ -7,25 +7,28 @@ from Version.Camera_Version import *
 from Model.CAN_Structure import *
 from Model.CAN_Analysis import *
 from Model.CAN_Parameter_Set import *
-from canlib import kvadblib, canlib
 from Model.CAN_Receive import *
 from Model.CAN_Coordinate import *
 import argparse
 import threading
 import csv
 import time
+import platform
 
-bitrates = {
-    '1M': canlib.canBITRATE_1M,
-    '500K': canlib.canBITRATE_500K,
-    '250K': canlib.canBITRATE_250K,
-    '125K': canlib.canBITRATE_125K,
-    '100K': canlib.canBITRATE_100K,
-    '62K': canlib.canBITRATE_62K,
-    '50K': canlib.canBITRATE_50K,
-    '83K': canlib.canBITRATE_83K,
-    '10K': canlib.canBITRATE_10K,
-}
+if platform.system() != 'Darwin':
+    from canlib import kvadblib, canlib
+
+    bitrates = {
+        '1M': canlib.canBITRATE_1M,
+        '500K': canlib.canBITRATE_500K,
+        '250K': canlib.canBITRATE_250K,
+        '125K': canlib.canBITRATE_125K,
+        '100K': canlib.canBITRATE_100K,
+        '62K': canlib.canBITRATE_62K,
+        '50K': canlib.canBITRATE_50K,
+        '83K': canlib.canBITRATE_83K,
+        '10K': canlib.canBITRATE_10K,
+    }
 
 class MainWindows(QWidget):
     '''
@@ -49,9 +52,10 @@ class MainWindows(QWidget):
         '''绘制主窗口'''
         self.SetUI()
         '''定义的信号与槽'''
-        self.Signal_Def()
-        '''Set default values'''
-        self.set_default_values()
+        if platform.system() != 'Darwin':
+            self.Signal_Def()
+            '''Set default values'''
+            self.set_default_values()
 
     def SetUI(self):
         self.resize(1144,850)

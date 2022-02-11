@@ -2,3 +2,12 @@
 *.mp4
 *.dll
 models/
+*/__pycache__
+Model/__pycache__/CAN_Analysis.cpython-38.pyc
+Model/__pycache__/CAN_Com2Sou.cpython-38.pyc
+Model/__pycache__/CAN_Coordinate.cpython-38.pyc
+Model/__pycache__/CAN_DATA.cpython-38.pyc
+Model/__pycache__/CAN_Initial.cpython-38.pyc
+Model/__pycache__/CAN_Parameter_Set.cpython-38.pyc
+Model/__pycache__/CAN_Receive.cpython-38.pyc
+Model/__pycache__/CAN_Structure.cpython-38.pyc
